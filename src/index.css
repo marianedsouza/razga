@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Outfit", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-razga-bg: #f8f5f2;
+  --color-razga-sand: #EAE3DB;
+  --color-razga-clay: #D4A373;
+  --color-razga-earth: #6B705C;
+  --color-razga-blush: #F1E3D3;
+  --color-razga-ink: #4A4845;
+  --color-razga-accent: #8b0000;
+  --color-razga-gold: #C5A059;
+  --color-razga-green: #166534;
+  --color-razga-yellow: #eab308;
+  --color-razga-orange: #c2410c;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-razga-bg text-razga-ink font-sans antialiased selection:bg-razga-accent selection:text-white overflow-x-hidden;
+  }
+}
+
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+.btn-travessia {
+  @apply relative inline-block text-xs uppercase tracking-[0.2em] py-5 px-10 transition-all duration-500 font-semibold;
+}
+
+.btn-travessia-outline {
+  @apply border border-razga-ink/30 text-razga-ink hover:border-razga-accent hover:text-razga-accent hover:bg-razga-accent/5;
+}
+
+.btn-travessia-solid {
+  @apply bg-razga-accent text-white shadow-lg shadow-razga-accent/10 hover:shadow-razga-accent/20 hover:opacity-95;
+}
+
+.section-spacing {
+  @apply py-24 md:py-40;
+}
